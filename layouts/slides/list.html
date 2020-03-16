@@ -1,0 +1,11 @@
+{{ define "main" }}
+<div class="slide-view">
+    {{ range $index, $pages := .Pages.GroupByParam "slide_num" }}
+    <section id="slide-num-{{$index}}" class="slide {{if  eq $index 0}} active-slide {{end}}">
+    {{ range $pages.Pages }}
+        {{ .Render .Params.slide_type}}
+    {{ end }}
+    </section>
+    {{ end }}
+</div>
+{{ end }}
