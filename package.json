@@ -2,9 +2,8 @@
   "name": "presentation",
   "version": "1.0.0",
   "description": "Simple Hugo Presentation Theme",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "cd ../../ && hugo serve -D --verbose --watch"
   },
   "keywords": [
     "Hugo"
@@ -12,6 +11,7 @@
   "author": "Florian Weingartshofer",
   "license": "MIT",
   "devDependencies": {
+    "prettier": "2.0.1",
     "sass": "^1.26.3"
   }
 }
