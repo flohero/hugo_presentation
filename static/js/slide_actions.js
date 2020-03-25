@@ -4,18 +4,22 @@ function nextSlide() {
 
   let slideView = document.getElementById("slide-view");
   let activeSlide = slideView.getElementsByClassName(activeFlag)[0];
+
   let activeSlideNum = Number(activeSlide.id.substring(10));
   let nextSlide = document.getElementById(`${slideNum}${activeSlideNum + 1}`);
 
-  if (document.getElementById(`${slideNum}${activeSlideNum + 2}`)) {
-    document.getElementById("forward-button")
-  }
-
   activeSlide.classList.toggle("slide--hide");
-  nextSlide.classList.toggle("slide--show");
 
-  setTimeout(function () {
+  // Start next animation
+  setTimeout(() => {
     activeSlide.classList.toggle(activeFlag);
     nextSlide.classList.toggle(activeFlag);
-  }, 200);
+    activeSlide.classList.toggle("slide--hide");
+    nextSlide.classList.toggle("slide--show");
+  }, 600);
+
+  // Remove unnecessary classes
+  setTimeout(() => {
+    nextSlide.classList.toggle("slide--show");
+  }, 700 * 2)
 }

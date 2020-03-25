@@ -2,11 +2,9 @@
 <div id="slide-view">
     {{ range $index, $pages := .Pages.GroupByParam "slide_num" }}
     <section id="slide-num-{{ $index }}" class="slide {{ if  eq $index 0 }} slide--active {{ end }}">
-        <div class="inside-slide">
-            {{ range $pages.Pages }}
-            {{ .Render .Params.slide_type }}
-            {{ end }}
-        </div>
+        {{ range $pages.Pages }}
+        {{ .Render .Params.slide_type }}
+        {{ end }}
     </section>
     {{ end }}
     <button id="forward-button" onclick="nextSlide()">Next</button>

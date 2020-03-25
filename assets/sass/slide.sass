@@ -1,5 +1,4 @@
-body
-  overflow: hidden
+$slide-duration: .7s
 
 .slide
   position: absolute
@@ -10,9 +9,8 @@ body
   max-height: 100vh
   height: 100vh
   display: none
+  background: transparent
 
-  .inside-slide
-    padding: 3em 5em
 
 .slide--active
   top: 0vh
@@ -20,12 +18,12 @@ body
 
 .slide--hide
   animation-name: slide--hide--animation
-  animation-duration: 1s
+  animation-duration: $slide-duration
   animation-fill-mode: forwards
 
 .slide--show
   animation-name: slide--show--animation
-  animation-duration: 1s
+  animation-duration: $slide-duration
   animation-fill-mode: forwards
 
 #forward-button
